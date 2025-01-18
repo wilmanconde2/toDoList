@@ -1,15 +1,30 @@
+$primary-font: 'Fuzzy Bubbles', 'Caveat', serif;
+
+/* Tema claro */
+.light-theme {
+  --background-color:rgba(245, 245, 245, 0.6);
+  --text-color: #333333;
+}
+
+/* Tema oscuro */
+.dark-theme {
+  --background-color: #333333;
+  --text-color: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $primary-font;
+  color: rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 2px #00ffff4d;
 
-  border: 0.5px solid red;
-}
-
-html {
-  font-size: 100%;
+  // border: 1px solid red;
 }
 
 body {
-  font-size: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }

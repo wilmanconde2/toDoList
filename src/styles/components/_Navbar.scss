@@ -1,0 +1,79 @@
+h1 {
+  text-align: center;
+  margin-block: 1.5rem;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+#settings {
+  max-width: 60%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 2rem;
+}
+
+#theme {
+  grid-column: 4/5;
+  justify-self: right;
+  text-align: center;
+
+  span {
+    cursor: pointer;
+  }
+}
+
+#taskSpan {
+  grid-column: 4/5;
+  justify-self: right;
+  cursor: pointer;
+}
+
+#date {
+  grid-column: 1/4;
+  grid-row: 2/3;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  align-content: center;
+  margin: auto;
+}
+
+#themeImg{
+  max-width: 2rem;
+  transition: all 0.3s ease;
+}
+
+
+#plusImg {
+  max-width: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+// Estilos para el tema claro y oscuro
+body.light-theme {
+  .input-group {
+    background-color: #00ffff80;
+  }
+
+  img {
+    color: rgb(254, 0, 0);
+    text-shadow: 1px 1px 2px #00ffff4d;
+  }
+}
+
+body.dark-theme {
+  img {
+    filter: invert(0.5) brightness(1.8);
+  }
+
+  #date,
+  h1 {
+    color: whitesmoke;
+  }
+
+  .input-group {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
