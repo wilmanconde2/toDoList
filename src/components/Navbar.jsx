@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/components/_Navbar.scss';
+import PropTypes from 'prop-types';
 
 const Navbar = ({ onAddTask }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -58,7 +59,7 @@ const Navbar = ({ onAddTask }) => {
     <>
       <h1>To Do List</h1>
       <div id="settings">
-        <h2 id="date">{formatDate()}</h2> {/* Mostrar la fecha y hora */}
+        <h2 id="date">{formatDate()}</h2> {/* Mostrar fecha y hora */}
         <div id='theme'>
           <span id="themeSpan" onClick={toggleTheme} >
             <img id='themeImg' src="/theme.png" alt="theme" />
@@ -71,6 +72,10 @@ const Navbar = ({ onAddTask }) => {
       </div>
     </>
   );
+};
+
+Navbar.propTypes = {
+  onAddTask: PropTypes.func.isRequired, // Función para agregar una tarea
 };
 
 export default Navbar;

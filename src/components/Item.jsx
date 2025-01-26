@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 const Item = ({ task, onDelete, onContentChange }) => {
     const [content, setContent] = useState(task.content);
@@ -53,6 +54,15 @@ const Item = ({ task, onDelete, onContentChange }) => {
             </div>
         </>
     );
+};
+
+Item.propTypes = {
+    task: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired,
+    }).isRequired,
+    onDelete: PropTypes.func.isRequired,
+    onContentChange: PropTypes.func.isRequired,
 };
 
 export default Item;
