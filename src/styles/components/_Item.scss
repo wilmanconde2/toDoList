@@ -1,8 +1,7 @@
 .input-group {
-  max-width: 80%;
-  margin: 0.5rem auto;
+  margin: auto;
   padding: 0.5rem;
-  background-color: #00ffff4d;
+  background-color: #14b0b04d;
   border-radius: 10px;
 
   input.check:checked + .text {
@@ -15,12 +14,12 @@
   }
 
   .text {
-    border-radius: 10px;
+    border: none;
+    margin-inline-end: 2.5rem;
     overflow: hidden;
     resize: none;
     box-sizing: border-box;
-    padding: 5px;
-    transition: background-color 0.3s ease;
+    color: rgba(12, 88, 158, 0.6);
   }
 }
 

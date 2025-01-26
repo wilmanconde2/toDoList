@@ -27,7 +27,7 @@ const Item = ({ task, onDelete }) => {
 
     return (
         <>
-            <div id="container" >
+            <div id="container-items" >
                 <div className="input-group">
                     <input
                         className="check"

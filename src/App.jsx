@@ -4,12 +4,12 @@ import Navbar from './components/Navbar';
 import Item from './components/Item';
 
 const App = () => {
-  const [tasks, setTasks] = useState([]); 
+  const [tasks, setTasks] = useState([]);
 
   const addTask = () => {
     // Crear una nueva tarea vacía con id único
     const newTask = { id: uuidv4(), content: '' };
-    setTasks([...tasks, newTask]); 
+    setTasks([...tasks, newTask]);
   };
 
   const deleteTask = (id) => {
@@ -18,18 +18,20 @@ const App = () => {
   };
 
   return (
-    <div>
-      <Navbar onAddTask={addTask} />
-      <div id="task-list">
-        {tasks.map((task) => (
-          <Item
-            key={task.id}
-            task={task}
-            onDelete={deleteTask}
-          />
-        ))}
+    <>
+      <div id='container'>
+        <Navbar onAddTask={addTask} />
+        <div id="task-list">
+          {tasks.map((task) => (
+            <Item
+              key={task.id}
+              task={task}
+              onDelete={deleteTask}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
