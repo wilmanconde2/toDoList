@@ -33,18 +33,17 @@ h1 {
 #date {
   grid-column: 1/4;
   grid-row: 2/3;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: bold;
   text-align: center;
   align-content: center;
   margin: auto;
 }
 
-#themeImg{
+#themeImg {
   max-width: 2rem;
   transition: all 0.3s ease;
 }
-
 
 #plusImg {
   max-width: 1.8rem;
@@ -75,5 +74,15 @@ body.dark-theme {
 
   .input-group {
     background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+// !----------------------------------------------------------------
+// BREAKPOINTS
+// !----------------------------------------------------------------
+
+@media (min-width: 576px) {
+  #date {
+    font-size: 1rem;
   }
 }
