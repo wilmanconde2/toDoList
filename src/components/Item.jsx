@@ -40,7 +40,7 @@ const Item = ({ task, onDelete, onContentChange }) => {
                         value={content}
                         onChange={handleChange}
                         rows="1"
-                        placeholder="Escribe aquí..."
+                        placeholder="tarea pendiente..."
                         aria-label="Textarea with checkbox"
                     ></textarea>
 
