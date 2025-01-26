@@ -1,4 +1,4 @@
-$primary-font: "Fuzzy Bubbles", "Caveat", serif;
+$primary-font: 'Fuzzy Bubbles', 'Caveat', serif;
 
 /* Tema claro */
 .light-theme {
@@ -19,7 +19,7 @@ $primary-font: "Fuzzy Bubbles", "Caveat", serif;
   font-family: $primary-font;
   color: rgba(0, 0, 0, 0.3);
   text-shadow: 1px 1px 2px #00ffff4d;
-  
+
   // border: 1px solid red;
 }
 
@@ -27,7 +27,10 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
-  min-width: 300px;
+}
+
+html {
+  min-height: 500px;
 }
 
 #container {
