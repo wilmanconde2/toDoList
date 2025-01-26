@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
 
-const Item = ({ task, onDelete }) => {
-    const [content, setContent] = useState(task.content); // Mantener contenido de la tarea
+const Item = ({ task, onDelete, onContentChange }) => {
+    const [content, setContent] = useState(task.content);
 
     useEffect(() => {
         const textarea = document.querySelector(`.textarea-${task.id}`);
 
         if (textarea) {
             textarea.addEventListener('input', () => {
-                textarea.style.height = 'auto';  // Resetear altura para el nuevo contenido
-                textarea.style.height = `${textarea.scrollHeight}px`;  // Ajustar altura según el contenido
+                textarea.style.height = 'auto';
+                textarea.style.height = `${textarea.scrollHeight}px`;
             });
         }
 
-        // Cleanup al desmontar el componente
         return () => {
             if (textarea) {
                 textarea.removeEventListener('input', () => { });
@@ -22,7 +21,8 @@ const Item = ({ task, onDelete }) => {
     }, [task.id]);
 
     const handleChange = (e) => {
-        setContent(e.target.value); // Actualizar el contenido de la tarea
+        setContent(e.target.value);
+        onContentChange(task.id, e.target.value); 
     };
 
     return (
@@ -43,7 +43,6 @@ const Item = ({ task, onDelete }) => {
                         aria-label="Textarea with checkbox"
                     ></textarea>
 
-                    {/* Botón eliminación */}
                     <button
                         className="delete-btn"
                         onClick={() => onDelete(task.id)}
